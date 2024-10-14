@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+package-lock.json
+/yarn.lock
+
+#Error Logs
+errorLogs/*.log
+*.log
+
+# React build (only push to production)
+#build/
+
+# Environment variables, never commit this file
+/*.env
+
+# Other
+tests/
+test.js
+notes.txt

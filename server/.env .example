@@ -1,0 +1,5 @@
+JWT_EXPIRES_IN="1d"
+JWT_SECRET="340987mkndf93jfsp7fpaj93i7849thp94esadf42fgds"
+ROOM_SECRET="054ng39354thg9gg354gtrebh6453k245hzukj4uf439"
+DATABASE='mongodb+srv://Lux:P4Tj81QRHb79TrTY@card-game.mme0uri.mongodb.net/CardGame?retryWrites=true&w=majority&appName=Card-Game'
+environment='testing'
