@@ -1,0 +1,15 @@
+.main-wrapper{
+  min-width: 308px;
+  background: #1C1C1C;
+
+  overflow: auto;
+  
+  .title{
+    background: #252525;
+    color: #929292;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 11px 14px;
+    height: 45px;
+  }
+}
