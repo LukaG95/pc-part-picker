@@ -37,7 +37,7 @@
   min-width: 100%;
 
   background: #252525;
-  transition: margin-top 0.15s linear, box-shadow 0.15s ease;
+  transition: margin-top 0.15s linear, box-shadow 0.15s ease, background 0.15s ease;
 
   height: 100%;
 
@@ -54,7 +54,7 @@
   position: absolute;
   font-size: 11px;
 
-  top: 10px;
+  top: 15px;
   left: 15px;
 }
 

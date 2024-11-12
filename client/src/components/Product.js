@@ -11,14 +11,16 @@ function Product({ stock_item, i }) {
   return (
     <div 
       className={styles["product_wrapper"]}
-      onMouseEnter={(e) => e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = i+100}
-      onMouseLeave={(e) => e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = (i+1) * 2}
+      onMouseEnter={(e) => e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = i+50}
+      onMouseLeave={(e) => {
+        e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = (i) * 2}
+      }
     >
       <div 
         className={styles.product} 
-        style={{zIndex: (i+1)*2}}
+        style={{zIndex: (i)*2}}
       >
-        <div className={styles.location} style={stockStyle(stock_item)}>{stock_item.location}{(i+1)*2}</div>  
+        <div className={styles.location} style={stockStyle(stock_item)}>{stock_item.location}</div>  
         { !stock_item.isNew && <div className={styles.used}>Rabljeno</div> }
         <div className={styles["img-wrapper"]}><img src={product.brand === "Intel" ? intelImage : amdImage }/></div>
         <div className={styles["product_info_wrapper"]}>
@@ -32,7 +34,7 @@ function Product({ stock_item, i }) {
         </div>
       </div>
      
-      <div className={styles["choose-button"]} style={{zIndex: (i+1)*2-1}}>Izberi {(i+1)*2-1}</div>
+      <div className={styles["choose-button"]} style={{zIndex: (i)*2-1}}>Izberi</div>
 
     </div>  
   );
@@ -47,3 +49,21 @@ const stockStyle = (item) => {
 }
 
 export default Product;
+
+
+
+{/* <div 
+      className={styles["product_wrapper"]}
+      onMouseEnter={(e) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current); // prevent removing z-index on very fast mouse re-enter
+        if (productRef.current) productRef.current.style.zIndex = i+50;
+      }}
+      onMouseLeave={(e) => {
+
+        timeoutRef.current = setTimeout(() => {
+          if (productRef.current) productRef.current.style.zIndex = (i) * 2;
+        }, 150);
+       
+      }}
+    >
+ */}

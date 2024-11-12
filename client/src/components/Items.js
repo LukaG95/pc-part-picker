@@ -43,17 +43,17 @@ function Items(props) {
 
   return (
     <div className={styles["main-wrapper"]}>
-      <div className={styles["top-search-wrapper"]}>
+      <div className={styles["top-search-wrapper"]} style={{zIndex: stock.length*2+1}}>
         <input className={styles.search} placeholder="išči..." type="text"/>
         <InStockButton />
         <SortByButton />
       </div>
 
       <div ref={itemsRef} className={styles["items"]}>
+      
         {
-          stock.map((item, i) => <Product stock_item={item} i={i} />).reverse()
+          stock.map((item, i) => <Product stock_item={item} i={stock.length-i} />)
         }
-          
       </div>
 
       {showSpace && <div className={styles["space"]}></div>}

@@ -6,6 +6,7 @@ function ChooseComponents(props) {
     <div className={styles["main-wrapper"]}>
       <div className={styles.title}>IZBERI KOMPONENTE</div>
 
+      
     </div>
   );
 }
