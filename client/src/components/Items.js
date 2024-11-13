@@ -7,6 +7,7 @@ import stock from '../assets/stock.js';
 
 function Items(props) {
   const [showSpace, setShowSpace] = useState(false);
+  const [z_counter, setZ_counter] = useState(3);
   const itemsRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function Items(props) {
 
   return (
     <div className={styles["main-wrapper"]}>
-      <div className={styles["top-search-wrapper"]} style={{zIndex: stock.length*2+1}}>
+      <div className={styles["top-search-wrapper"]} style={{zIndex: z_counter}}>
         <input className={styles.search} placeholder="išči..." type="text"/>
         <InStockButton />
         <SortByButton />
@@ -52,7 +53,7 @@ function Items(props) {
       <div ref={itemsRef} className={styles["items"]}>
       
         {
-          stock.map((item, i) => <Product stock_item={item} i={stock.length-i} />)
+          stock.map((item, i) => <Product stock_item={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
         }
       </div>
 

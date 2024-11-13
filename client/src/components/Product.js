@@ -4,37 +4,62 @@ import products from '../assets/products.json';
 import amdImage from '../images/amd.png';
 import intelImage from '../images/intel.png';
 
-function Product({ stock_item, i }) {
+let leaveTimeout;
+
+function Product({ stock_item, z_counter, setZ_counter }) {
   const found_product = products.find(product => product.id === stock_item.id);
   const product = {...found_product, ...stock_item}; 
+
+  const productRef = useRef(null);
+  const chooseButtonRef = useRef(null);
+
+
+  const handleMouseEnter = () => {
+    console.log(leaveTimeout)
+    clearTimeout(leaveTimeout);
+    productRef.current.style.zIndex = z_counter+2;
+    chooseButtonRef.current.style.zIndex = z_counter+1;
+    setZ_counter(prev => prev+2)
+  
+  };
+  const handleMouseLeave = () => {
+    leaveTimeout = setTimeout(()=> {
+      productRef.current.style.zIndex = z_counter-1;
+      chooseButtonRef.current.style.zIndex = z_counter-2;
+
+    }, 150)
+    
+  };
 
   return (
     <div 
       className={styles["product_wrapper"]}
-      onMouseEnter={(e) => e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = i+50}
-      onMouseLeave={(e) => {
-        e.currentTarget.querySelector(`.${styles.product}`).style.zIndex = (i) * 2}
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div 
         className={styles.product} 
-        style={{zIndex: (i)*2}}
+        ref={productRef}
       >
         <div className={styles.location} style={stockStyle(stock_item)}>{stock_item.location}</div>  
         { !stock_item.isNew && <div className={styles.used}>Rabljeno</div> }
         <div className={styles["img-wrapper"]}><img src={product.brand === "Intel" ? intelImage : amdImage }/></div>
         <div className={styles["product_info_wrapper"]}>
-          <div className={styles["price-wrapper"]}>
-            <div className={styles.price}>€{product.price}</div>
-            {product.discount && <div className={styles.discount}>-{product.discount}%</div>}
+          <div>
+            <div className={styles["price-wrapper"]}>
+              <div className={styles.price}>€{product.price}</div>
+              {product.discount && <div className={styles.discount}>-{product.discount}%</div>}
+            </div>
+            <div className={styles["regular_price"]}>Običajna cena: €{product.regular_price}</div>
           </div>
-          <div className={styles["regular_price"]}>Običajna cena: €{product.regular_price}</div>
+          <div>
           <div className={styles["product_name"]}>{product.name}</div>
           <div className={styles["product_description"]}>{product.description}</div>
+          </div>
         </div>
       </div>
      
-      <div className={styles["choose-button"]} style={{zIndex: (i)*2-1}}>Izberi</div>
+      <div ref={chooseButtonRef} className={styles["choose-button"]}>Izberi</div>
 
     </div>  
   );

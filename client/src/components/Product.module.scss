@@ -28,6 +28,8 @@
 }
 
 .product{
+  z-index: 2;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -127,6 +129,8 @@
 }
 
 .choose-button{
+  z-index: 1;
+  
   position: absolute;
   bottom: 0px;
 
