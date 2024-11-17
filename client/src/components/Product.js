@@ -1,34 +1,35 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
 import styles from './Product.module.scss';
 import products from '../assets/products.json';
 import amdImage from '../images/amd.png';
 import intelImage from '../images/intel.png';
+import { SelectionContext  } from "../context/SelectionContext.js";
 
 let leaveTimeout;
 
 function Product({ stock_item, z_counter, setZ_counter }) {
   const found_product = products.find(product => product.id === stock_item.id);
   const product = {...found_product, ...stock_item}; 
+  const { userSelections, updateSelection } = useContext(SelectionContext);
 
   const productRef = useRef(null);
   const chooseButtonRef = useRef(null);
 
 
+    console.log(userSelections[product.type]) 
+
   const handleMouseEnter = () => {
-    console.log(leaveTimeout)
     clearTimeout(leaveTimeout);
     productRef.current.style.zIndex = z_counter+2;
     chooseButtonRef.current.style.zIndex = z_counter+1;
     setZ_counter(prev => prev+2)
-  
   };
+
   const handleMouseLeave = () => {
     leaveTimeout = setTimeout(()=> {
       productRef.current.style.zIndex = z_counter-1;
       chooseButtonRef.current.style.zIndex = z_counter-2;
-
     }, 150)
-    
   };
 
   return (
@@ -37,11 +38,12 @@ function Product({ stock_item, z_counter, setZ_counter }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div 
-        className={styles.product} 
+      <div  
+        className={`${styles.product} ${isThisProductSelected() && styles.selected}`} 
         ref={productRef}
       >
         <div className={styles.location} style={stockStyle(stock_item)}>{stock_item.location}</div>  
+        { isThisProductSelected() && <div className={styles["selected-text"]}>Izbrano</div> }
         { !stock_item.isNew && <div className={styles.used}>Rabljeno</div> }
         <div className={styles["img-wrapper"]}><img src={product.brand === "Intel" ? intelImage : amdImage }/></div>
         <div className={styles["product_info_wrapper"]}>
@@ -59,10 +61,24 @@ function Product({ stock_item, z_counter, setZ_counter }) {
         </div>
       </div>
      
-      <div ref={chooseButtonRef} className={styles["choose-button"]}>Izberi</div>
+        { 
+          isThisProductSelected() ? 
+            <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button"]} ${styles["remove-button"]}`}>Odstrani</div>  
+              :
+            <div ref={chooseButtonRef} onClick={() => updateSelection(product)} className={styles["choose-button"]}>Izberi</div>
+        }
+      
 
     </div>  
   );
+
+  function isThisProductSelected(){
+    if (!userSelections[product.type].product) return false;
+    if (userSelections[product.type].product.id !== product.id) return false;
+
+    return true;
+  }
+
 }
 
 const stockStyle = (item) => {
@@ -74,21 +90,3 @@ const stockStyle = (item) => {
 }
 
 export default Product;
-
-
-
-{/* <div 
-      className={styles["product_wrapper"]}
-      onMouseEnter={(e) => {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current); // prevent removing z-index on very fast mouse re-enter
-        if (productRef.current) productRef.current.style.zIndex = i+50;
-      }}
-      onMouseLeave={(e) => {
-
-        timeoutRef.current = setTimeout(() => {
-          if (productRef.current) productRef.current.style.zIndex = (i) * 2;
-        }, 150);
-       
-      }}
-    >
- */}

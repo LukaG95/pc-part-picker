@@ -4,309 +4,279 @@
     "name": "Intel Core i9-13900K",
     "brand": "Intel",
     "description": "16 cores, 32 threads @5.8GHz",
-    "image": "intel-core-i9-13900k.png"
+    "type": "cpu"
   },
   {
     "id": 2,
     "name": "Intel Core i7-13700K",
     "brand": "Intel",
     "description": "16 cores, 24 threads @5.4GHz",
-    "image": "intel-core-i7-13700k.png"
+    "type": "cpu"
   },
   {
     "id": 3,
     "name": "Intel Core i5-13600K",
     "brand": "Intel",
     "description": "14 cores, 20 threads @5.1GHz",
-    "image": "intel-core-i5-13600k.png"
+    "type": "cpu"
   },
   {
     "id": 4,
     "name": "Intel Core i3-13100",
     "brand": "Intel",
     "description": "4 cores, 8 threads @4.5GHz",
-    "image": "intel-core-i3-13100.png"
+    "type": "cpu"
   },
   {
     "id": 5,
     "name": "AMD Ryzen 9 7950X",
     "brand": "AMD",
     "description": "16 cores, 32 threads @5.7GHz",
-    "image": "amd-ryzen-9-7950x.png"
+    "type": "cpu"
   },
   {
     "id": 6,
     "name": "AMD Ryzen 7 7700X",
     "brand": "AMD",
     "description": "8 cores, 16 threads @5.4GHz",
-    "image": "amd-ryzen-7-7700x.png"
+    "type": "cpu"
   },
   {
     "id": 7,
     "name": "AMD Ryzen 5 7600X",
     "brand": "AMD",
     "description": "6 cores, 12 threads @5.3GHz",
-    "image": "amd-ryzen-5-7600x.png"
+    "type": "cpu"
   },
   {
     "id": 8,
-    "name": "Intel Core i9-12900K",
-    "brand": "Intel",
-    "description": "16 cores, 24 threads @5.2GHz",
-    "image": "intel-core-i9-12900k.png"
+    "name": "AMD Ryzen 3 7300X",
+    "brand": "AMD",
+    "description": "4 cores, 8 threads @5.0GHz",
+    "type": "cpu"
   },
   {
     "id": 9,
-    "name": "Intel Core i7-12700K",
+    "name": "Intel Core i9-12900K",
     "brand": "Intel",
-    "description": "12 cores, 20 threads @5.0GHz",
-    "image": "intel-core-i7-12700k.png"
+    "description": "16 cores, 24 threads @5.2GHz",
+    "type": "cpu"
   },
   {
     "id": 10,
-    "name": "Intel Core i5-12600K",
+    "name": "Intel Core i7-12700K",
     "brand": "Intel",
-    "description": "10 cores, 16 threads @4.9GHz",
-    "image": "intel-core-i5-12600k.png"
+    "description": "12 cores, 20 threads @5.0GHz",
+    "type": "cpu"
   },
   {
     "id": 11,
-    "name": "AMD Ryzen 9 5900X",
-    "brand": "AMD",
-    "description": "12 cores, 24 threads @4.8GHz",
-    "image": "amd-ryzen-9-5900x.png"
+    "name": "Intel Core i5-12600K",
+    "brand": "Intel",
+    "description": "10 cores, 16 threads @4.9GHz",
+    "type": "cpu"
   },
   {
     "id": 12,
-    "name": "AMD Ryzen 7 5800X",
-    "brand": "AMD",
-    "description": "8 cores, 16 threads @4.7GHz",
-    "image": "amd-ryzen-7-5800x.png"
+    "name": "Intel Core i3-12300",
+    "brand": "Intel",
+    "description": "4 cores, 8 threads @4.4GHz",
+    "type": "cpu"
   },
   {
     "id": 13,
-    "name": "AMD Ryzen 5 5600X",
+    "name": "AMD Ryzen 9 5900X",
     "brand": "AMD",
-    "description": "6 cores, 12 threads @4.6GHz",
-    "image": "amd-ryzen-5-5600x.png"
+    "description": "12 cores, 24 threads @4.8GHz",
+    "type": "cpu"
   },
   {
     "id": 14,
-    "name": "Intel Core i9-10900K",
-    "brand": "Intel",
-    "description": "10 cores, 20 threads @5.3GHz",
-    "image": "intel-core-i9-10900k.png"
+    "name": "AMD Ryzen 7 5800X",
+    "brand": "AMD",
+    "description": "8 cores, 16 threads @4.7GHz",
+    "type": "cpu"
   },
   {
     "id": 15,
-    "name": "Intel Core i7-10700K",
-    "brand": "Intel",
-    "description": "8 cores, 16 threads @5.1GHz",
-    "image": "intel-core-i7-10700k.png"
+    "name": "AMD Ryzen 5 5600X",
+    "brand": "AMD",
+    "description": "6 cores, 12 threads @4.6GHz",
+    "type": "cpu"
   },
   {
     "id": 16,
-    "name": "Intel Core i5-10600K",
+    "name": "Intel Core i9-10900K",
     "brand": "Intel",
-    "description": "6 cores, 12 threads @4.8GHz",
-    "image": "intel-core-i5-10600k.png"
+    "description": "10 cores, 20 threads @5.3GHz",
+    "type": "cpu"
   },
   {
     "id": 17,
-    "name": "AMD Ryzen 9 3950X",
+    "name": "AMD Ryzen Threadripper 3970X",
     "brand": "AMD",
-    "description": "16 cores, 32 threads @4.7GHz",
-    "image": "amd-ryzen-9-3950x.png"
+    "description": "32 cores, 64 threads @4.5GHz",
+    "type": "cpu"
   },
   {
     "id": 18,
-    "name": "AMD Ryzen 7 3800X",
-    "brand": "AMD",
-    "description": "8 cores, 16 threads @4.5GHz",
-    "image": "amd-ryzen-7-3800x.png"
+    "name": "Intel Core i5-10400",
+    "brand": "Intel",
+    "description": "6 cores, 12 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 19,
-    "name": "AMD Ryzen 5 3600X",
+    "name": "AMD Ryzen 3 3300X",
     "brand": "AMD",
-    "description": "6 cores, 12 threads @4.4GHz",
-    "image": "amd-ryzen-5-3600x.png"
+    "description": "4 cores, 8 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 20,
-    "name": "Intel Core i9-9900K",
+    "name": "Intel Core i3-10100",
     "brand": "Intel",
-    "description": "8 cores, 16 threads @5.0GHz",
-    "image": "intel-core-i9-9900k.png"
+    "description": "4 cores, 8 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 21,
-    "name": "Intel Core i7-9700K",
-    "brand": "Intel",
-    "description": "8 cores, 8 threads @4.9GHz",
-    "image": "intel-core-i7-9700k.png"
+    "name": "AMD Ryzen 9 5950X",
+    "brand": "AMD",
+    "description": "16 cores, 32 threads @4.9GHz",
+    "type": "cpu"
   },
   {
     "id": 22,
-    "name": "Intel Core i5-9600K",
+    "name": "Intel Core i7-11700K",
     "brand": "Intel",
-    "description": "6 cores, 6 threads @4.6GHz",
-    "image": "intel-core-i5-9600k.png"
+    "description": "8 cores, 16 threads @4.9GHz",
+    "type": "cpu"
   },
   {
     "id": 23,
-    "name": "AMD Ryzen 9 3900X",
+    "name": "AMD Ryzen 7 5700G",
     "brand": "AMD",
-    "description": "12 cores, 24 threads @4.6GHz",
-    "image": "amd-ryzen-9-3900x.png"
+    "description": "8 cores, 16 threads @4.6GHz",
+    "type": "cpu"
   },
   {
     "id": 24,
-    "name": "AMD Ryzen 7 3700X",
-    "brand": "AMD",
-    "description": "8 cores, 16 threads @4.4GHz",
-    "image": "amd-ryzen-7-3700x.png"
+    "name": "Intel Core i5-11600K",
+    "brand": "Intel",
+    "description": "6 cores, 12 threads @4.6GHz",
+    "type": "cpu"
   },
   {
     "id": 25,
-    "name": "AMD Ryzen 5 3500X",
-    "brand": "AMD",
-    "description": "6 cores, 6 threads @4.1GHz",
-    "image": "amd-ryzen-5-3500x.png"
+    "name": "Intel Core i3-10320",
+    "brand": "Intel",
+    "description": "4 cores, 8 threads @4.6GHz",
+    "type": "cpu"
   },
   {
     "id": 26,
-    "name": "Intel Core i5-13500",
-    "description": "14 cores, 20 threads @4.7GHz",
-    "price": 259.99,
-    "stock": 40,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i5-13500.jpg"
+    "name": "AMD Ryzen 5 5600G",
+    "brand": "AMD",
+    "description": "6 cores, 12 threads @4.4GHz",
+    "type": "cpu"
   },
   {
     "id": 27,
-    "name": "AMD Ryzen 3 4100",
-    "description": "4 cores, 8 threads @4.0GHz",
-    "price": 89.99,
-    "stock": 60,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-3-4100.jpg"
+    "name": "Intel Xeon W-3175X",
+    "brand": "Intel",
+    "description": "28 cores, 56 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 28,
-    "name": "Intel Xeon W-3345",
-    "description": "24 cores, 48 threads @4.0GHz",
-    "price": 2349.99,
-    "stock": 7,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-xeon-w-3345.jpg"
+    "name": "AMD Athlon 3000G",
+    "brand": "AMD",
+    "description": "2 cores, 4 threads @3.5GHz",
+    "type": "cpu"
   },
   {
     "id": 29,
-    "name": "AMD Ryzen 7 5700G",
-    "description": "8 cores, 16 threads @4.6GHz",
-    "price": 289.99,
-    "stock": 45,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-7-5700G.jpg"
+    "name": "Intel Pentium Gold G6400",
+    "brand": "Intel",
+    "description": "2 cores, 4 threads @4.0GHz",
+    "type": "cpu"
   },
   {
     "id": 30,
-    "name": "Intel Core i9-10940X",
-    "description": "14 cores, 28 threads @4.6GHz",
-    "price": 799.99,
-    "stock": 12,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i9-10940X.jpg"
+    "name": "AMD Ryzen 5 4500",
+    "brand": "AMD",
+    "description": "6 cores, 12 threads @4.1GHz",
+    "type": "cpu"
   },
   {
     "id": 31,
-    "name": "AMD Ryzen Threadripper 3970X",
-    "description": "32 cores, 64 threads @4.5GHz",
-    "price": 1849.99,
-    "stock": 15,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-threadripper-3970X.jpg"
+    "name": "Intel Core i9-12900KS",
+    "brand": "Intel",
+    "description": "16 cores, 24 threads @5.5GHz",
+    "type": "cpu"
   },
   {
     "id": 32,
-    "name": "Intel Core i7-13700KF",
-    "description": "16 cores, 24 threads @5.3GHz",
-    "price": 439.99,
-    "stock": 30,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i7-13700KF.jpg"
+    "name": "AMD Ryzen 7 5700X",
+    "brand": "AMD",
+    "description": "8 cores, 16 threads @4.8GHz",
+    "type": "cpu"
   },
   {
     "id": 33,
-    "name": "AMD Ryzen 5 PRO 4650G",
-    "description": "6 cores, 12 threads @4.3GHz",
-    "price": 219.99,
-    "stock": 38,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-5-pro-4650G.jpg"
+    "name": "Intel Core i3-10105",
+    "brand": "Intel",
+    "description": "4 cores, 8 threads @4.4GHz",
+    "type": "cpu"
   },
   {
     "id": 34,
-    "name": "Intel Core i3-12300",
-    "description": "4 cores, 8 threads @4.4GHz",
-    "price": 139.99,
-    "stock": 65,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i3-12300.jpg"
+    "name": "AMD Ryzen 9 3900X",
+    "brand": "AMD",
+    "description": "12 cores, 24 threads @4.6GHz",
+    "type": "cpu"
   },
   {
     "id": 35,
-    "name": "AMD Ryzen 7 3800XT",
-    "description": "8 cores, 16 threads @4.7GHz",
-    "price": 339.99,
-    "stock": 28,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-7-3800XT.jpg"
+    "name": "Intel Core i9-10850K",
+    "brand": "Intel",
+    "description": "10 cores, 20 threads @5.2GHz",
+    "type": "cpu"
   },
   {
     "id": 36,
-    "name": "Intel Core i5-12600KF",
-    "description": "10 cores, 16 threads @4.9GHz",
-    "price": 264.99,
-    "stock": 35,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i5-12600KF.jpg"
+    "name": "AMD Ryzen Threadripper 3990X",
+    "brand": "AMD",
+    "description": "64 cores, 128 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 37,
-    "name": "AMD Ryzen 9 3980X",
-    "description": "16 cores, 32 threads @4.2GHz",
-    "price": 729.99,
-    "stock": 25,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-9-3980X.jpg"
+    "name": "Intel Core i5-11400",
+    "brand": "Intel",
+    "description": "6 cores, 12 threads @4.4GHz",
+    "type": "cpu"
   },
   {
     "id": 38,
-    "name": "Intel Pentium Gold G7400",
-    "description": "2 cores, 4 threads @3.7GHz",
-    "price": 69.99,
-    "stock": 100,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-pentium-gold-G7400.jpg"
+    "name": "AMD Ryzen 5 3400G",
+    "brand": "AMD",
+    "description": "4 cores, 8 threads @4.2GHz",
+    "type": "cpu"
   },
   {
     "id": 39,
-    "name": "AMD Ryzen 3 PRO 4350G",
-    "description": "4 cores, 8 threads @4.0GHz",
-    "price": 99.99,
-    "stock": 42,
-    "brand": "AMD",
-    "image": "https://example.com/images/amd-ryzen-3-pro-4350G.jpg"
+    "name": "Intel Core i3-12100F",
+    "brand": "Intel",
+    "description": "4 cores, 8 threads @4.3GHz",
+    "type": "cpu"
   },
   {
     "id": 40,
-    "name": "Intel Core i9-11900KF",
-    "description": "8 cores, 16 threads @5.3GHz",
-    "price": 409.99,
-    "stock": 20,
-    "brand": "Intel",
-    "image": "https://example.com/images/intel-i9-11900KF.jpg"
+    "name": "AMD Ryzen 9 3950X",
+    "brand": "AMD",
+    "description": "16 cores, 32 threads @4.7GHz",
+    "type": "cpu"
   }
 ]

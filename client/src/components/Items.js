@@ -53,7 +53,7 @@ function Items(props) {
       <div ref={itemsRef} className={styles["items"]}>
       
         {
-          stock.map((item, i) => <Product stock_item={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
+          stock.map(item => <Product key={item.id} stock_item={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
         }
       </div>
 
