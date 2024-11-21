@@ -3,11 +3,8 @@ import styles from './ChooseComponents.module.scss';
 import PC_Component from './PC_Component.js';
 import { SelectionContext  } from "../context/SelectionContext.js";
 
-function ChooseComponents(props) {
+function ChooseComponents({ setSelectedComponent }) {
   const { userSelections } = useContext(SelectionContext);
-  const [open, setOpen] = useState();
-
-  //console.log(userSelections)
 
   return (
     <div className={styles["main-wrapper"]}>
@@ -23,7 +20,7 @@ function ChooseComponents(props) {
                 type={component.type}
                 name={component.name}
                 product={component.product}
-                setOpen={setOpen}
+                setSelectedComponent={setSelectedComponent}
               />
             )
           })

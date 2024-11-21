@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './PC_Component.module.scss';
 
-function PC_Component({ type, name, setOpen, product }) {
+function PC_Component({ type, name, setSelectedComponent, product }) {
   return (
-    <div className={styles["main-wrapper"]} onClick={()=> setOpen(type)}>
+    <div className={styles["main-wrapper"]} onClick={()=> setSelectedComponent({type, name})}>
       <div className={styles["img-wrapper"]}> <img src={`/images/${type}.png`} className={styles[type]}/> </div>
       <div className={styles["info-wrapper"]}> 
        

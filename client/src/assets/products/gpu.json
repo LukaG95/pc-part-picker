@@ -1,0 +1,34 @@
+[
+  {
+    "id": 41,
+    "name": "NVIDIA GeForce RTX 4090",
+    "brand": "NVIDIA",
+    "description": "24GB GDDR6X, 16384 CUDA cores, DLSS 3, ray tracing",
+    "image": "rtx 4090.png",
+    "type": "gpu"
+  },
+  {
+    "id": 42,
+    "name": "AMD Radeon RX 7900 XTX",
+    "brand": "AMD",
+    "description": "24GB GDDR6, RDNA 3 architecture, ray tracing, 6144 cores",
+    "image": "rx 7900 xtx.png",
+    "type": "gpu"
+  },
+  {
+    "id": 43,
+    "name": "NVIDIA GeForce RTX 3070",
+    "brand": "NVIDIA",
+    "description": "8GB GDDR6, 5888 CUDA cores, DLSS, ray tracing",
+    "image": "rtx 3070.png",
+    "type": "gpu"
+  },
+  {
+    "id": 44,
+    "name": "NVIDIA GeForce RTX 3060",
+    "brand": "NVIDIA",
+    "description": "12GB GDDR6, 3584 CUDA cores, DLSS, ray tracing",
+    "image": "rtx 3060.png",
+    "type": "gpu"
+  }
+]

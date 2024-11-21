@@ -1,4 +1,5 @@
 .main-wrapper{
+  position: relative;
   min-width: 308px;
   background: #1C1C1C;
 
@@ -11,5 +12,123 @@
     font-weight: 700;
     padding: 11px 14px;
     height: 45px;
+  }
+
+
+}
+
+.basket-items-wrapper{
+  
+  .basket-item{
+    background: #252525;
+    border: 1px solid #373737;
+
+    padding: 15px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    border-radius: 5px;
+
+    .title-price-wrapper{
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 10px;
+
+      :first-child{
+        color: #D6D6D6;
+        font-size: 12px;
+      }
+
+      :last-child{
+        color: #62CF6D;
+        font-size: 12px;
+      }
+    }
+
+    .basket-item-name-wrapper{
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+
+      :first-child{
+        background: #4E4E4E;
+        height: 4px;
+        width: 4px;
+
+        margin-right: 10px;
+        border-radius: 100%;
+      }
+
+      :last-child{
+        color: #BCBCBC;
+        font-size: 11px;
+      }
+    }
+  }
+  
+}
+
+.floating-register-wrapper{
+  position: absolute;
+
+  background: #252525;
+  
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  border-radius: 5px;
+  padding: 18px;
+
+  .total-amount-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    :first-child{
+      color: #F6F6F6;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    :last-child{
+      color: #C1C1C1;
+      font-size: 14px;
+      font-weight: 600;
+      
+    }
+  }
+
+  .to-register-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f6f6f6;
+    background: #459C4E;
+
+    border-bottom: 3px solid #2D6B33;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    height: 43px;
+    cursor: pointer;
+    user-select: none;
+    
+    &:hover{
+      background: #4caa55;
+      border-bottom: 3px solid #3a8540;
+    }
+
+    &:active{
+      background: #51b85c;
+      border-bottom: none;
+    }
   }
 }

@@ -81,6 +81,19 @@
 .product-name{
   color: #BCBCBC;
   font-size: 11px;
+
+  white-space: nowrap;   
+  overflow: hidden;          
+  text-overflow: ellipsis;
+
+  width: 140px;
+  max-height: 38px;
+
+  &:hover{
+    white-space: wrap;
+    overflow: visible;          
+    text-overflow: clip;
+  }
 }
 
 .product-price{

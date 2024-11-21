@@ -1,0 +1,34 @@
+[
+  {
+    "id": 53,
+    "name": "NZXT H510 Elite",
+    "brand": "NZXT",
+    "description": "Tempered glass, ATX mid-tower, RGB lighting, USB-C front panel",
+    "image": "NZXT H510 Elite.png",
+    "type": "case"
+  },
+  {
+    "id": 54,
+    "name": "Corsair iCUE 4000X RGB",
+    "brand": "Corsair",
+    "description": "ATX mid-tower, tempered glass, RGB lighting, cable management",
+    "image": "Corsair iCUE 4000X RGB.png",
+    "type": "case"
+  },
+  {
+    "id": 55,
+    "name": "Cooler Master MasterBox NR200P",
+    "brand": "Cooler Master",
+    "description": "Mini-ITX, tempered glass, compact design, airflow optimization",
+    "image": "Cooler Master MasterBox NR200P.png",
+    "type": "case"
+  },
+  {
+    "id": 56,
+    "name": "Lian Li PC-O11 Dynamic",
+    "brand": "Lian Li",
+    "description": "ATX full-tower, dual-chamber design, tempered glass, RGB support",
+    "image": "Lian Li PC-O11 Dynamic.png",
+    "type": "case"
+  }
+]

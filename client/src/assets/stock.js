@@ -1,4 +1,6 @@
 const stockData = [
+
+  // cpu
   { id: 1, stock: 15, location: "Na zalogi", isNew: true, price: 629.99, regular_price: 629.99, discount: null },
   { id: 2, stock: 10, location: "Pri dobavitelju", isNew: true, price: 809.99, regular_price: 899.99, discount: 10 },
   { id: 3, stock: 5, location: "Na zalogi", isNew: false, price: 1099.99, regular_price: 1099.99, discount: null },
@@ -11,7 +13,7 @@ const stockData = [
   { id: 10, stock: 3, location: "Ni na zalogi", isNew: true, price: 1399.99, regular_price: 1399.99, discount: null },
   { id: 11, stock: 14, location: "Na zalogi", isNew: true, price: 712.49, regular_price: 749.99, discount: 5 },
   { id: 12, stock: 20, location: "Pri dobavitelju", isNew: true, price: 279.99, regular_price: 279.99, discount: null },
-  { id: 13, stock: 2, location: "Na zalogi", isNew: true, price: 2049.99, regular_price: 2049.99, discount: null },
+  { id: 13, stock: 2, location: "Na zalogi", isNew: true, price: 2049.99, regular_price: 599.99, discount: 70 },
   { id: 14, stock: 16, location: "Na zalogi", isNew: false, price: 119.99, regular_price: 119.99, discount: null },
   { id: 15, stock: 10, location: "Pri dobavitelju", isNew: true, price: 429.99, regular_price: 429.99, discount: null },
   { id: 16, stock: 7, location: "Na zalogi", isNew: false, price: 179.99, regular_price: 199.99, discount: 10 },
@@ -38,7 +40,48 @@ const stockData = [
   { id: 37, stock: 5, location: "Na zalogi", isNew: true, price: 449.99, regular_price: 529.99, discount: 15 },
   { id: 38, stock: 8, location: "Na zalogi", isNew: true, price: 314.99, regular_price: 349.99, discount: null },
   { id: 39, stock: 10, location: "Pri dobavitelju", isNew: true, price: 80.99, regular_price: 89.99, discount: 10 },
-  { id: 40, stock: 16, location: "Na zalogi", isNew: true, price: 439.99, regular_price: 439.99, discount: null }
+  { id: 40, stock: 16, location: "Na zalogi", isNew: true, price: 439.99, regular_price: 439.99, discount: null },
+
+  // gpu
+  { id: 41, stock: 8, location: "Na zalogi", isNew: true, price: 1799.99, regular_price: 1999.99, discount: 10 },
+  { id: 42, stock: 12, location: "Pri dobavitelju", isNew: true, price: 949.99, regular_price: 1049.99, discount: 10 },
+  { id: 43, stock: 20, location: "Na zalogi", isNew: false, price: 479.99, regular_price: 519.99, discount: 8 },
+  { id: 44, stock: 15, location: "Pri dobavitelju", isNew: false, price: 339.99, regular_price: 359.99, discount: 5 },
+
+  // storage
+  { id: 45, stock: 25, location: "Na zalogi", isNew: true, price: 149.99, regular_price: 179.99, discount: 17 },
+  { id: 46, stock: 10, location: "Pri dobavitelju", isNew: true, price: 299.99, regular_price: 329.99, discount: 9 },
+  { id: 47, stock: 40, location: "Na zalogi", isNew: false, price: 89.99, regular_price: 99.99, discount: 10 },
+  { id: 48, stock: 30, location: "Na zalogi", isNew: false, price: 94.99, regular_price: 109.99, discount: 13 },
+
+  // psu
+  { id: 45, stock: 10, location: "Na zalogi", isNew: true, price: 149.99, regular_price: 169.99, discount: 12 },
+  { id: 46, stock: 7, location: "Pri dobavitelju", isNew: true, price: 129.99, regular_price: 149.99, discount: 13 },
+  { id: 47, stock: 5, location: "Na zalogi", isNew: false, price: 199.99, regular_price: 229.99, discount: 13 },
+  { id: 48, stock: 20, location: "Pri dobavitelju", isNew: false, price: 79.99, regular_price: 89.99, discount: 11 },
+
+  // motherboards
+  { id: 49, stock: 8, location: "Na zalogi", isNew: true, price: 399.99, regular_price: 439.99, discount: 9 },
+  { id: 50, stock: 15, location: "Pri dobavitelju", isNew: true, price: 219.99, regular_price: 249.99, discount: 12 },
+  { id: 51, stock: 10, location: "Na zalogi", isNew: false, price: 189.99, regular_price: 209.99, discount: 10 },
+  { id: 52, stock: 25, location: "Na zalogi", isNew: false, price: 99.99, regular_price: 119.99, discount: 16 },
+  
+  // cases
+  { id: 53, stock: 20, location: "Na zalogi", isNew: true, price: 159.99, regular_price: 179.99, discount: 11 },
+  { id: 54, stock: 15, location: "Pri dobavitelju", isNew: true, price: 139.99, regular_price: 159.99, discount: 13 },
+  { id: 55, stock: 10, location: "Na zalogi", isNew: false, price: 99.99, regular_price: 109.99, discount: 9 },
+  { id: 56, stock: 8, location: "Na zalogi", isNew: false, price: 139.99, regular_price: 149.99, discount: 7 },
+
+  // services
+  { id: 57, stock: 1, location: "Na zalogi", isNew: true, price: 0, regular_price: 20, discount: 100 },
+  { id: 58, stock: 1, location: "Na zalogi", isNew: true, price: 9.99, regular_price: 9.99, dicount: null},
+  { id: 59, stock: 1, location: "Na zalogi", isNew: true, price: 29.99, regular_price: 29.99, discount: null },
+  { id: 60, stock: 1, location: "Na zalogi", isNew: true, price: 19.99, regular_price: 19.99, discount: null }
+
 ];
+
+
+
+
 
 export default stockData;

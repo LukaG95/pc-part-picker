@@ -1,28 +1,24 @@
 import { useEffect, useRef, useState, useContext } from 'react';
 import styles from './Product.module.scss';
-import products from '../assets/products.json';
-import amdImage from '../images/amd.png';
-import intelImage from '../images/intel.png';
+import { sleep } from '../misc/sleep.js';
 import { SelectionContext  } from "../context/SelectionContext.js";
 
 let leaveTimeout;
 
-function Product({ stock_item, z_counter, setZ_counter }) {
-  const found_product = products.find(product => product.id === stock_item.id);
-  const product = {...found_product, ...stock_item}; 
+function Product({ product, z_counter, setZ_counter }) {
+
   const { userSelections, updateSelection } = useContext(SelectionContext);
 
   const productRef = useRef(null);
   const chooseButtonRef = useRef(null);
-
-
-    console.log(userSelections[product.type]) 
+  const containerRef = useRef(null);
 
   const handleMouseEnter = () => {
     clearTimeout(leaveTimeout);
     productRef.current.style.zIndex = z_counter+2;
     chooseButtonRef.current.style.zIndex = z_counter+1;
     setZ_counter(prev => prev+2)
+  
   };
 
   const handleMouseLeave = () => {
@@ -32,20 +28,61 @@ function Product({ stock_item, z_counter, setZ_counter }) {
     }, 150)
   };
 
+   const handleProductClick = async () => {
+    const product = productRef.current;
+    const productRect = product.getBoundingClientRect(); // Get product's position and dimensions
+
+    // Create a clone of the product
+    const clone = product.cloneNode(true);
+    clone.style.position = "absolute";
+    clone.style.top = `${productRect.top-93}px`; // Set top based on viewport position
+    clone.style.left = `${productRect.left}px`; // Set left based on viewport position
+    clone.style.width = `${productRect.width}px`;
+    clone.style.height = `${productRect.height}px`;
+    clone.style.transition = "transform 0.75s ease, opacity 0.75s ease";
+    clone.style.zIndex = z_counter+5;
+
+    // Append to the portal root
+    const portalRoot = document.getElementById("portal-root");
+    portalRoot.appendChild(clone);
+
+    // Get the target element (basket)
+    await sleep(10); // so that the basket element with id=basket exists (has time to be created)
+    const target = document.getElementById("basket"); // Replace 'basket' with your actual target element's ID
+    const targetRect = target.getBoundingClientRect();
+
+    // Calculate the translation values
+    const translateX = targetRect.left + targetRect.width / 2 - (productRect.left + productRect.width / 2);
+    const translateY = targetRect.top + targetRect.height / 2 - (productRect.top + productRect.height / 2);
+
+    // Start animation
+    setTimeout(() => {
+      clone.style.transform = `translate(${translateX}px, ${translateY}px) scale(0.5)`;
+      clone.style.opacity = "0";
+    }, 0);
+
+    // Remove the clone after animation ends
+    clone.addEventListener("transitionend", () => {
+      clone.remove();
+    });
+  };
+  
+
   return (
     <div 
       className={styles["product_wrapper"]}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      ref={containerRef}
     >
       <div  
         className={`${styles.product} ${isThisProductSelected() && styles.selected}`} 
         ref={productRef}
       >
-        <div className={styles.location} style={stockStyle(stock_item)}>{stock_item.location}</div>  
+        <div className={styles.location} style={stockStyle(product)}>{product.location}</div>  
         { isThisProductSelected() && <div className={styles["selected-text"]}>Izbrano</div> }
-        { !stock_item.isNew && <div className={styles.used}>Rabljeno</div> }
-        <div className={styles["img-wrapper"]}><img src={product.brand === "Intel" ? intelImage : amdImage }/></div>
+        { !product.isNew && <div className={styles.used}>Rabljeno</div> }
+        <div className={styles["img-wrapper"]}><img src={require(`../images/${product.image}`)}/></div>
         <div className={styles["product_info_wrapper"]}>
           <div>
             <div className={styles["price-wrapper"]}>
@@ -65,7 +102,7 @@ function Product({ stock_item, z_counter, setZ_counter }) {
           isThisProductSelected() ? 
             <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button"]} ${styles["remove-button"]}`}>Odstrani</div>  
               :
-            <div ref={chooseButtonRef} onClick={() => updateSelection(product)} className={styles["choose-button"]}>Izberi</div>
+            <div ref={chooseButtonRef} onClick={(e) => {handleProductClick(e); updateSelection(product)}} className={styles["choose-button"]}>Izberi</div>
         }
       
 

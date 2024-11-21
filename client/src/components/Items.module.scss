@@ -37,23 +37,44 @@
   height: fit-content; // for when there is 2 rows of items
   max-height: calc(100vh - 93px); // 100% screen size - navbar
   
-  /* margin-top: 46px; */
-  padding-top: 46px;
+  padding-top: 96px;
   padding-bottom: 21px;
 
   gap: 1px; 
 
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   overflow-y: auto;
+
+}
+
+.space, .space2{
+  position: absolute;
+
+  width: 100%;
+  border-top: 1px solid #131313;
 }
 
 .space{
-  position: absolute;
   bottom: 0px;
-
-  width: 100%;
   height: 21px;
-
   background: #1C1C1C;
-  border-top: 1px solid #131313;
+}
+
+.space2{
+  display: flex;
+  align-items: center;
+
+  color: #636363;
+  background: #1C1C1C;
+
+  top: 45px;
+  height: 50px;
+  padding-left: 25px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  span{
+    font-size: 11px;
+  }
 }

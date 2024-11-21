@@ -1,0 +1,34 @@
+[
+  {
+    "id": 49,
+    "name": "ASUS ROG Strix Z790-E Gaming",
+    "brand": "ASUS",
+    "description": "Intel Z790, DDR5, PCIe 5.0, Wi-Fi 6E, ATX",
+    "image": "ASUS ROG Strix Z790-E Gaming.png",
+    "type": "motherboard"
+  },
+  {
+    "id": 50,
+    "name": "MSI MPG B650 Tomahawk WiFi",
+    "brand": "MSI",
+    "description": "AMD B650, DDR5, PCIe 4.0, Wi-Fi 6, ATX",
+    "image": "MSI MPG B650 Tomahawk WiFi.png",
+    "type": "motherboard"
+  },
+  {
+    "id": 51,
+    "name": "Gigabyte AORUS X570 Elite",
+    "brand": "Gigabyte",
+    "description": "AMD X570, DDR4, PCIe 4.0, RGB Fusion, ATX",
+    "image": "Gigabyte AORUS X570 Elite.png",
+    "type": "motherboard"
+  },
+  {
+    "id": 52,
+    "name": "ASRock B550M Pro4",
+    "brand": "ASRock",
+    "description": "AMD B550, DDR4, PCIe 4.0, Micro-ATX",
+    "image": "ASRock B550M Pro4.png",
+    "type": "motherboard"
+  }
+]

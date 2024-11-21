@@ -1,0 +1,34 @@
+[
+  {
+    "id": 45,
+    "name": "Corsair RM850x",
+    "brand": "Corsair",
+    "description": "850W 80 Plus Gold, Fully Modular, Low Noise Fan",
+    "image": "Corsair RM850x.png",
+    "type": "psu"
+  },
+  {
+    "id": 46,
+    "name": "Seasonic Focus GX-750",
+    "brand": "Seasonic",
+    "description": "750W 80 Plus Gold, Fully Modular, Compact Design",
+    "image": "Seasonic Focus GX-750.png",
+    "type": "psu"
+  },
+  {
+    "id": 47,
+    "name": "EVGA SuperNOVA 1000 G6",
+    "brand": "EVGA",
+    "description": "1000W 80 Plus Gold, Fully Modular, Eco Mode",
+    "image": "EVGA SuperNOVA 1000 G6.png",
+    "type": "psu"
+  },
+  {
+    "id": 48,
+    "name": "Cooler Master MWE 650 Bronze V2",
+    "brand": "Cooler Master",
+    "description": "650W 80 Plus Bronze, Semi-Modular, Quiet Fan",
+    "image": "Cooler Master MWE 650 Bronze V2.png",
+    "type": "psu"
+  }
+]

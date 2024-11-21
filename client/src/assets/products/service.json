@@ -1,0 +1,30 @@
+[
+  {
+    "id": 57,
+    "name": "Sestava računalnika",
+    "description": "Strokovna sestava vseh izbranih komponent v popolnoma delujoč računalnik.",
+    "image": "assembly.png",
+    "type": "services"
+  },
+  {
+    "id": 58,
+    "name": "Inštalacija operacijskega sistema",
+    "description": "Namestitev in nastavitev operacijskega sistema Windows ali Linux.",
+    "image": "install software.png",
+    "type": "services"
+  },
+  {
+    "id": 59,
+    "name": "Profesionalni overclocking",
+    "description": "Optimizirano navijanje procesorja in grafične kartice za boljše zmogljivosti.",
+    "image": "overclocking.png",
+    "type": "services"
+  },
+  {
+    "id": 60,
+    "name": "Sortiranje kablov",
+    "description": "Strokovno urejanje kablov za boljši pretok zraka in estetiko.",
+    "image": "cable management.png",
+    "type": "services"
+  }
+]
