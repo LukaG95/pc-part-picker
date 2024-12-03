@@ -3,7 +3,7 @@ import styles from './ChooseComponents.module.scss';
 import PC_Component from './PC_Component.js';
 import { SelectionContext  } from "../context/SelectionContext.js";
 
-function ChooseComponents({ setSelectedComponent }) {
+function ChooseComponents({ selectedComponent, setSelectedComponent }) {
   const { userSelections } = useContext(SelectionContext);
 
   return (
@@ -17,9 +17,8 @@ function ChooseComponents({ setSelectedComponent }) {
             return (
               <PC_Component 
                 key={component.type}
-                type={component.type}
-                name={component.name}
-                product={component.product}
+                component={component}
+                selectedComponent={selectedComponent}
                 setSelectedComponent={setSelectedComponent}
               />
             )

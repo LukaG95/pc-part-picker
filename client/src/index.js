@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import { UserContextProvider } from "./context/UserContext";
 import { SelectionProvider } from "./context/SelectionContext";
+import { ProductsContextProvider } from "./context/ProductsContext";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <UserContextProvider>
     <SelectionProvider>
-      <App />
+      <ProductsContextProvider>
+        <App />
+      </ProductsContextProvider>
     </SelectionProvider>
   </UserContextProvider>
 );

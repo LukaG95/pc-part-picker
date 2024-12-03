@@ -1,7 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import styles from './SortByButton.module.scss';
+import { ProductsContext } from "../../context/ProductsContext.js";
 
-function SortByButton(props) {
+function SortByButton() {
+
+  const { setSortBy } = useContext(ProductsContext);
 
   const options = [
     { label: "Po ceni padajoče", value: "price_desc" },
@@ -15,6 +18,7 @@ function SortByButton(props) {
 
   const handleSelect = (option) => {
     setSelectedOption(option.label);
+    setSortBy(option.value);
     //props.onSelect(option.value);
   };
 

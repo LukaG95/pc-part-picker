@@ -1,39 +1,15 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import styles from './Items.module.scss';
-import SortByButton from './filters/SortByButton';
-import InStockButton from './filters/InStockButton';
+import SortByButton from './filter buttons/SortByButton';
+import CheckBoxButton from './filter buttons/CheckBoxButton';
 import Product from './Product.js';
-import stock from '../assets/stock.js';
 
-import cpu from '../assets/products/cpu.json';
-import gpu from '../assets/products/gpu.json';
-import psu from '../assets/products/psu.json';
-import motherboard from '../assets/products/motherboard.json';
-import desktop_case from '../assets/products/case.json';
-import storage from '../assets/products/storage.json';
-import service from '../assets/products/service.json';
+import { ProductsContext } from "../context/ProductsContext.js";
 
-function Items({ selectedComponent }) {
+function Items({ z_counter, setZ_counter}) {
   const [showSpace, setShowSpace] = useState(false);
-  const [z_counter, setZ_counter] = useState(3);
   const itemsRef = useRef(null);
-
-  const hard_info = [...cpu, ...gpu, ...storage, ...psu, ...motherboard, ...desktop_case, ...service];
-  
-  // combination of hard_info and stock
-  const combinedData = hard_info.map(product => {
-    const stockInfo = stock.find(item => item.id === product.id) || {};
-    return {
-      ...product,
-      ...stockInfo
-    };
-  });
-
-  const [products, setProducts] = useState(combinedData.filter(item => item.type === selectedComponent.type));
-  
-  useEffect(()=> {
-    setProducts(combinedData.filter(item => item.type === selectedComponent.type))
-  }, [selectedComponent])
+  const { products, selectedComponent, searchText, setSearchText } = useContext(ProductsContext);
 
   useEffect(() => {
     // this if for the bottom part of the items (the .space)
@@ -70,18 +46,18 @@ function Items({ selectedComponent }) {
   return (
     <div className={styles["main-wrapper"]}>
 
-      <div className={styles["top-search-wrapper"]} style={{zIndex: z_counter+1}}>
+      <div className={styles["top-search-wrapper"]} style={{zIndex: z_counter+1}} value={searchText} onChange={e => setSearchText(e.target.value)}>
         <input className={styles.search} placeholder="išči..." type="text"/>
-        <InStockButton />
+        <CheckBoxButton label={"Na zalogi"} />
         <SortByButton />
       </div>
     
       <div ref={itemsRef} className={styles["items"]}>
 
-        <div className={styles["space2"]}>{selectedComponent.name}<span>&nbsp;&nbsp;({products.length}x)</span></div>
+        <div className={styles["space2"]}>{selectedComponent.plural.toUpperCase()}<span>{products && products.length} artiklov</span></div>
 
         {
-          products.map(item => <Product key={item.id} product={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
+          products && products.map(item => <Product key={item.id} product={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
         }
 
       </div>

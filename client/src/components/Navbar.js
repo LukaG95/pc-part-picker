@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import styles from './Navbar.module.scss';
 import PhoneImage from '../images/phone.png';
 import DiscordImage from '../images/discord.png';
@@ -5,13 +7,16 @@ import InstagramImage from '../images/instagram.png';
 import TwitterImage from '../images/twitter.png';
 import FacebookImage from '../images/facebook.png';
 
-const Navbar = ({  }) => {
+const Navbar = ({ openSidebar, setOpenSidebar }) => {
+
+  const toggleMenu = () => setOpenSidebar(!openSidebar);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles["logo-wrapper"]}>logo</div>
       <div className={styles["main-right-wrapper"]}>
         <div className={styles["main-upper"]}>
-          <div className={styles["upper-left"]}>
+          <div className={`${styles["upper-left"]} ${styles["hide-on-mobile"]}`}>
             <p className={styles["text-nav"]}>FAQ</p>
             <p className={styles["text-nav"]}>POMOČ</p>
             <p className={styles["text-nav"]}>O NAS</p>
@@ -21,7 +26,7 @@ const Navbar = ({  }) => {
               <p>040 765 061</p>
             </div>
           </div>
-          <div className={styles["upper-right"]}>
+          <div className={`${styles["upper-right"]} ${styles["hide-on-mobile"]}`}>
             <img style={{width: "16px", height: "17px"}} src={DiscordImage}/>
             <img src={InstagramImage}/>
             <img style={{width: "18px", height: "14px"}} src={TwitterImage}/>
@@ -30,12 +35,19 @@ const Navbar = ({  }) => {
         </div>
         <div className={styles["main-lower"]}>
           <div className={styles["lower-left"]}>
-            <div className={styles["nav-item"]}>Trgovina</div>
-            <div className={styles["nav-item"]} style={{color: "#f6f6f6", borderBottom: "1px solid white", paddingTop: "1px"}}>Sestavi PC</div>
-            <div className={styles["nav-item"]}>Prodaj nam</div>
-            <div className={styles["nav-item"]}>Servis in storitve</div>
+            <div className={`${styles["nav-item"]} ${styles["hide-on-mobile"]}`}>Trgovina</div>
+            <div className={`${styles["nav-item"]} ${styles["hide-on-mobile"]}`} style={{color: "#f6f6f6", borderBottom: "1px solid white", paddingTop: "1px"}}>Sestavi PC</div>
+            <div className={`${styles["nav-item"]} ${styles["hide-on-mobile"]}`}>Prodaj nam</div>
+            <div className={`${styles["nav-item"]} ${styles["hide-on-mobile"]}`}>Servis in storitve</div>
           </div>
-          <div className={styles["login-button"]}>Prijava</div>
+          <div className={`${styles["login-button"]} ${styles["hide-on-mobile"]}`}>Prijava</div>
+          <div className={styles["hamburger-wrapper"]} onClick={toggleMenu}>
+            <div className={styles.hamburger}>
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
         </div>
       </div>
     </nav>

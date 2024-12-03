@@ -102,7 +102,7 @@ function Product({ product, z_counter, setZ_counter }) {
           isThisProductSelected() ? 
             <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button"]} ${styles["remove-button"]}`}>Odstrani</div>  
               :
-            <div ref={chooseButtonRef} onClick={(e) => {handleProductClick(e); updateSelection(product)}} className={styles["choose-button"]}>Izberi</div>
+            <div ref={chooseButtonRef} onClick={(e) => { updateSelection(product); handleProductClick(e) }} className={styles["choose-button"]}>Izberi</div>
         }
       
 
@@ -110,10 +110,13 @@ function Product({ product, z_counter, setZ_counter }) {
   );
 
   function isThisProductSelected(){
-    if (!userSelections[product.type].product) return false;
-    if (userSelections[product.type].product.id !== product.id) return false;
-
-    return true;
+    if (userSelections[product.type].products.length <= 0) return false;
+    let selected = false;
+    userSelections[product.type].products.forEach(item => {
+      if (item.id === product.id) selected = true;
+    })
+    
+    return selected;
   }
 
 }
