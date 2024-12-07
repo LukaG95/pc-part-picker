@@ -12,7 +12,7 @@
 
   padding: 40px;
 
-  background: #252525;
+  background: #1c1c1c;
   border-left: 1px solid #444444;
 
   transform: translateX(100%);
@@ -166,4 +166,11 @@
     }
   }
 
+}
+
+@media (max-width: 800px) {
+  .sidebar{
+    width: 100%;
+    border-left: none;
+  }
 }

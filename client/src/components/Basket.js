@@ -8,9 +8,6 @@ function Basket(props) {
   const { userSelections, updateSelection } = useContext(SelectionContext);
   const object_keys = Object.keys(userSelections);
 
-  const [openBasket, setOpenBasket] = useState(false);
-  const [openFilters, setOpenFilters] = useState(false);
-
   if (s_width > 1150)
   return (
     <div className={styles["main-wrapper"]}>
@@ -23,23 +20,10 @@ function Basket(props) {
           <div>ZNESEK</div>
           <div>€{price()}</div>
         </div>
-        <div className={styles["to-register-button"]}>NA BLAGAJNO</div>
+        <div className={styles["cash-register-button"]}>NA BLAGAJNO</div>
       </div>
     </div>
   );
-
-  else return (
-    <div className={styles["floating-wrapper"]}>
-      <div className={styles["filter-button"]}> 
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className={styles["basket-button"]} onClick={()=> setOpenBasket(!openBasket)}><p>KOŠARICA</p><p>0x</p></div>
-      {/* <div className={`${styles["floating-filters"]} ${openFilters && styles.open}`}></div> */}
-      <div className={`${styles["floating-basket"]} ${openBasket ? styles.open : ""}`}></div>
-    </div>
-  )
 
   function price(){
     let price = 0;

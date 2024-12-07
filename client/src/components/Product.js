@@ -35,7 +35,7 @@ function Product({ product, z_counter, setZ_counter }) {
     // Create a clone of the product
     const clone = product.cloneNode(true);
     clone.style.position = "absolute";
-    clone.style.top = `${productRect.top-93}px`; // Set top based on viewport position
+    clone.style.top = `${productRect.top}px`; // Set top based on viewport position
     clone.style.left = `${productRect.left}px`; // Set left based on viewport position
     clone.style.width = `${productRect.width}px`;
     clone.style.height = `${productRect.height}px`;

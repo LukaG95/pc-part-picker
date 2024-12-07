@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import styles from './SortByButton.module.scss';
 import { ProductsContext } from "../../context/ProductsContext.js";
 
-function SortByButton() {
+function SortByButton({ mobile }) {
 
   const { setSortBy } = useContext(ProductsContext);
 
@@ -36,7 +36,7 @@ function SortByButton() {
   }, []);
 
   return (
-    <div onClick={() => setIsOpen(prev => !prev)} className={`${styles["dropdown-wrapper"]} ${isOpen ? styles.open : ""}`} ref={dropdownRef}> 
+    <div onClick={() => setIsOpen(prev => !prev)} className={`${styles["dropdown-wrapper"]} ${isOpen ? styles.open : ""} ${mobile ? styles.mobile : ""}`} ref={dropdownRef}> 
       <div className={styles.shader}>
         <label>{selectedOption}</label>
         <div className={styles.triangle}></div>

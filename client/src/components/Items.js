@@ -3,10 +3,12 @@ import styles from './Items.module.scss';
 import SortByButton from './filter buttons/SortByButton';
 import CheckBoxButton from './filter buttons/CheckBoxButton';
 import Product from './Product.js';
+import useWindowDimensions from '../misc/WindowDimensions.js';
 
 import { ProductsContext } from "../context/ProductsContext.js";
 
 function Items({ z_counter, setZ_counter}) {
+  const { s_width } = useWindowDimensions();
   const [showSpace, setShowSpace] = useState(false);
   const itemsRef = useRef(null);
   const { products, selectedComponent, searchText, setSearchText } = useContext(ProductsContext);
@@ -28,7 +30,7 @@ function Items({ z_counter, setZ_counter}) {
       const isScrollable = scrollHeight > clientHeight;
 
       // Show `.space` if scrolled 98.5% or if items container is not overflowing
-      setShowSpace(scrollPercentage >= 98.5 || !isScrollable);
+      setShowSpace((scrollPercentage >= 98.5 || !isScrollable) && s_width >= 1150);
     };
 
     const items = itemsRef.current;
@@ -41,12 +43,12 @@ function Items({ z_counter, setZ_counter}) {
     return () => {
       items.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [s_width]);
 
   return (
     <div className={styles["main-wrapper"]}>
 
-      <div className={styles["top-search-wrapper"]} style={{zIndex: z_counter+1}} value={searchText} onChange={e => setSearchText(e.target.value)}>
+      <div className={`${styles["top-search-wrapper"]} ${styles["hide-on-mobile"]}`} style={{zIndex: z_counter+1}} value={searchText} onChange={e => setSearchText(e.target.value)}>
         <input className={styles.search} placeholder="išči..." type="text"/>
         <CheckBoxButton label={"Na zalogi"} />
         <SortByButton />
@@ -54,7 +56,7 @@ function Items({ z_counter, setZ_counter}) {
     
       <div ref={itemsRef} className={styles["items"]}>
 
-        <div className={styles["space2"]}>{selectedComponent.plural.toUpperCase()}<span>{products && products.length} artiklov</span></div>
+        <div className={`${styles["space2"]} ${styles["hide-on-mobile"]}`} >{selectedComponent.plural.toUpperCase()}<span>{products && products.length} artiklov</span></div>
 
         {
           products && products.map(item => <Product key={item.id} product={item} z_counter={z_counter} setZ_counter={setZ_counter} />)

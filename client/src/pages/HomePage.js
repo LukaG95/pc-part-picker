@@ -14,14 +14,14 @@ function HomePage() {
 
   return (
     <div className={styles.home}>
-      <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
+      <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} z_counter={z_counter}/>
       <div className={styles["main-wrapper"]}>
         <ChooseComponents />
         <Items z_counter={z_counter} setZ_counter={setZ_counter} />
         <Basket />
-        <div id="portal-root" className={styles["portal-root"]}></div>
         <Sidebar openSidebar={openSidebar} z_counter={z_counter} />
       </div>
+        <div id="portal-root" className={styles["portal-root"]}></div>
     </div>
   );  
 

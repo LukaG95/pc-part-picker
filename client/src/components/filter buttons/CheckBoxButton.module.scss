@@ -3,9 +3,8 @@
 
   align-items: center;
   justify-content: center;
-  padding: 0px 15px;
+  padding: 0px 5px;
   transition: bottom 0.5s ease;
-
 
   &:hover{
     cursor: pointer;
@@ -84,11 +83,15 @@
       margin-top: 3px;
     }
   }
+
+  @media (max-width: 1150px) {
+    position: static;
+  }
 }
 
 .stock-indicator{
   position: absolute;
-  right: 20px;
+  right: 25px;
 
   color: #636363;
   font-size: 12px;
