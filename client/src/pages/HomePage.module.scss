@@ -1,7 +1,10 @@
 .home{
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-x: hidden;
+
 }
 
 .main-wrapper{
@@ -11,8 +14,8 @@
   overflow: auto;
   gap: 1px;
   margin-top: 1px;
-  overflow-x: hidden;
 
+  overflow: hidden;
 }
 
 .portal-root{

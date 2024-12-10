@@ -19,8 +19,8 @@ function HomePage() {
         <ChooseComponents />
         <Items z_counter={z_counter} setZ_counter={setZ_counter} />
         <Basket />
-        <Sidebar openSidebar={openSidebar} z_counter={z_counter} />
       </div>
+        <Sidebar openSidebar={openSidebar} z_counter={z_counter} />
         <div id="portal-root" className={styles["portal-root"]}></div>
     </div>
   );  

@@ -4,7 +4,6 @@
 
   overflow: auto;
 
-
   .title{
     background: #252525;
     color: #929292;
@@ -19,9 +18,14 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
+
 }
 
 @media (max-width: 1150px) {
+  .main-wrapper{
+    background: #131313;
+  }
+
   .components{
     flex-direction: row;
   }
@@ -39,3 +43,4 @@
     }
   }
 }
+

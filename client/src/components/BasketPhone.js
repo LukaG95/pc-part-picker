@@ -30,7 +30,7 @@ function BasketPhone({ z_counter }) {
     return Object.values(userSelections).some((selection) => selection.products.length > 0);
   };
 
-  if (s_width < 1150)
+  if (s_width < 1151)
   return (
     <div className={`${styles["dropdown-wrapper"]} ${isOpen ? styles.open : ""}`} ref={dropdownRef} id="basket">
 

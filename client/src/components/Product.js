@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState, useContext } from 'react';
 import styles from './Product.module.scss';
 import { sleep } from '../misc/sleep.js';
+import useWindowDimensions from '../misc/WindowDimensions.js';
 import { SelectionContext  } from "../context/SelectionContext.js";
 
 let leaveTimeout;
 
 function Product({ product, z_counter, setZ_counter }) {
-
+  const { s_width, s_height } = useWindowDimensions();
   const { userSelections, updateSelection } = useContext(SelectionContext);
 
   const productRef = useRef(null);
@@ -14,6 +15,7 @@ function Product({ product, z_counter, setZ_counter }) {
   const containerRef = useRef(null);
 
   const handleMouseEnter = () => {
+    if (s_width <= 1150) return
     clearTimeout(leaveTimeout);
     productRef.current.style.zIndex = z_counter+2;
     chooseButtonRef.current.style.zIndex = z_counter+1;
@@ -22,6 +24,7 @@ function Product({ product, z_counter, setZ_counter }) {
   };
 
   const handleMouseLeave = () => {
+    if (s_width <= 1150) return
     leaveTimeout = setTimeout(()=> {
       productRef.current.style.zIndex = z_counter-1;
       chooseButtonRef.current.style.zIndex = z_counter-2;
@@ -96,13 +99,24 @@ function Product({ product, z_counter, setZ_counter }) {
           <div className={styles["product_description"]}>{product.description}</div>
           </div>
         </div>
+
+        { s_width <= 1150 ?
+          isThisProductSelected() ? 
+            <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button-mobile"]} ${styles["remove-button-mobile"]}`}>ODSTRANI</div>  
+              :
+              <div onClick={(e) => { updateSelection(product); handleProductClick(e) }} className={styles["choose-button-mobile"]}>IZBERI</div>
+            : null
+        }
+
+
       </div>
      
-        { 
+        { s_width > 1150 ?
           isThisProductSelected() ? 
             <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button"]} ${styles["remove-button"]}`}>Odstrani</div>  
               :
             <div ref={chooseButtonRef} onClick={(e) => { updateSelection(product); handleProductClick(e) }} className={styles["choose-button"]}>Izberi</div>
+            : null
         }
       
 

@@ -30,7 +30,7 @@ function SearchPhone({ z_counter }) {
   }, []);
 
 
-  if (s_width < 1150)
+  if (s_width < 1151)
   return (
     <div className={`${styles["dropdown-wrapper"]} ${isOpen ? styles.open : ""}`} ref={dropdownRef} value={searchText} onChange={e => setSearchText(e.target.value)}> 
 
