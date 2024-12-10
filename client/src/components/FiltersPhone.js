@@ -55,7 +55,7 @@ function FiltersPhone({ z_counter }) {
           filters.map((filter, i) => <CheckBoxButton label={ filter.name } type={"component-filter"} componentType={selectedComponent.type} pushDown={(i+1)*33 + 11 + filters.length} showFilters={true} brandFilter={true}/>)
         }
         <div className={styles.spacer2}></div>
-        <CheckBoxButton label={"Na zalogi"} brandFilter={true} showFilters={true} type={"component-filter"}/>
+        <CheckBoxButton label={"Na zalogi"} brandFilter={false} showFilters={true} type={"mobile-component-filter"}/>
       </div>
 
     </div>

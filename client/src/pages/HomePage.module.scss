@@ -18,3 +18,15 @@
 .portal-root{
   position: absolute;
 }
+
+@media (max-width: 1150px) {
+  .hide-on-pc {
+    display: none !important;
+  }
+
+  .main-wrapper{
+    display: unset;
+    flex-grow: unset;
+    margin-top: 0px;
+  }
+}

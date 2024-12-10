@@ -258,11 +258,12 @@
 
 @media (max-width: 1150px) {
   .navbar{
-    height: 60px;
+    min-height: 60px;
   }
-
   
   .logo-wrapper{
+    font-size: 25px;
+    font-weight: 700;
     min-width: unset;
     padding: 0px 20px;
   }

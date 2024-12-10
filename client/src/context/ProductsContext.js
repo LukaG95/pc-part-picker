@@ -36,6 +36,7 @@ function ProductsContextProvider({ children }) {
 
   useEffect(()=> {
     setBrands([]);
+    setSearchText("");
   }, [ selectedComponent ])
 
   useEffect(() => {

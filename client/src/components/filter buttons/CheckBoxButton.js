@@ -5,9 +5,14 @@ import { ProductsContext } from "../../context/ProductsContext.js";
 // checkbox button SHOULD reflect the true state which is in productsContext
 function InStockButton({ label, type, componentType, pushDown, showFilters, brandFilter }) {
   const [isSelected, setIsSelected] = useState(false);
-  const { combinedData, setInStock, addOrRemoveBrand, selectedComponent } = useContext(ProductsContext);
+  const { products, setInStock, addOrRemoveBrand, selectedComponent } = useContext(ProductsContext);
 
-  const count = combinedData.filter(p => p.brand === label && p.type === componentType).length;
+  let count, stock_count;
+  if (products){
+    count = products.filter(p => p.brand === label && p.type === componentType).length;
+    stock_count = products.filter(item => item.stock > 0).length;
+
+  }
 
   // close filters when changing component
   useEffect(()=> {
@@ -28,6 +33,7 @@ function InStockButton({ label, type, componentType, pushDown, showFilters, bran
       </div>
       <label>{ label }</label>
       { type === "component-filter" && <div className={styles["stock-indicator"]}>{count}</div>}
+      { type === "mobile-component-filter" && <div className={styles["stock-indicator"]}>{stock_count}</div>}
     </div>
   );
 }

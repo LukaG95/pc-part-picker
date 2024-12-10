@@ -3,7 +3,8 @@
   background: #1C1C1C;
 
   overflow: auto;
-  
+
+
   .title{
     background: #252525;
     color: #929292;
@@ -18,4 +19,23 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
+}
+
+@media (max-width: 1150px) {
+  .components{
+    flex-direction: row;
+  }
+
+  .title{
+    display: none;
+  }
+
+  .components{
+    background: #131313;
+    padding: 4px 0px;
+
+    >div:last-child{
+      margin-right: 0px;
+    }
+  }
 }
