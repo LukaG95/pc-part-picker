@@ -49,7 +49,7 @@ function Items({ z_counter, setZ_counter}) {
     <div className={styles["main-wrapper"]}>
 
       <div className={`${styles["top-search-wrapper"]} ${styles["hide-on-mobile"]}`} style={{zIndex: z_counter+1}} value={searchText} onChange={e => setSearchText(e.target.value)}>
-        <input className={styles.search} placeholder="išči..." type="text"/>
+        <input className={styles.search} placeholder="išči izdelke..." type="text"/>
         <CheckBoxButton label={"Na zalogi"} />
         <SortByButton />
       </div>

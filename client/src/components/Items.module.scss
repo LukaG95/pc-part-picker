@@ -88,7 +88,10 @@
   .items{
     padding-top: 0px;
     max-height: calc(100vh - 142px); // 100% screen size - navbar
-    padding-bottom: 0px;
+    //padding-bottom: 0px;
+    padding-bottom: 40px;
+    margin-left: 1px;
+    margin-right: 1px;
   }
   .hide-on-mobile {
     display: none !important;
