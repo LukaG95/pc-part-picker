@@ -45,7 +45,7 @@
 
   position: fixed;
   top: 61px;
-  right: 1px;
+  right: 0px;
 
   height: 500px;
   width: 369px;
@@ -61,6 +61,7 @@
 
   @media (max-width: 800px) {
     width: 100%;
+    height: calc(100% - 60px);
   }
 
   .title{
