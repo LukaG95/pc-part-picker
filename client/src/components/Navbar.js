@@ -49,7 +49,7 @@ const Navbar = ({ openSidebar, setOpenSidebar, z_counter }) => {
             <BasketPhone z_counter={z_counter} />
             <div className={`${styles.spacer} ${styles["hide-on-pc"]}`}></div>
             <div className={`${styles["login-button"]} ${styles["hide-on-mobile"]}`}>Prijava</div>
-            <div className={styles["hamburger-wrapper"]} onClick={toggleMenu}>
+            <div className={`${styles["hamburger-wrapper"]} ${openSidebar ? styles.open : ""}`} onClick={toggleMenu}>
               <div className={styles.hamburger}>
                 <span />
                 <span />

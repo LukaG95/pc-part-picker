@@ -14,12 +14,12 @@
     border-radius: 50px;
 
     &:hover{
-      background: #252525;
+      //background: #252525;
       cursor: pointer;
     }
 
     &:active{
-      background: #383838;
+      //background: #383838;
     }
   }
 
@@ -37,6 +37,7 @@
       width: 100%;
       border-radius: 2px;
     }
+
   }
 
 
@@ -267,4 +268,8 @@
     min-width: unset;
     padding: 0px 20px;
   }
+}
+
+.open{
+  background: #252525;
 }
