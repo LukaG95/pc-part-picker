@@ -1,7 +1,6 @@
 .dropdown-wrapper{
   position: relative;
-  margin-right: 5px;
-
+  margin-right: 3px;
 }
 
 .filter-button{
@@ -17,8 +16,8 @@
   border-radius: 5px;
 
   img {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
   }
 
   >div{
@@ -30,10 +29,10 @@
 
   &:hover{
     cursor: pointer;
-    background: #353535;
+    //background: #353535;
   }
   &:active{
-    background: #3a3a3a;
+    //background: #3a3a3a;
   }
 }
 
@@ -119,6 +118,10 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.open .filter-button{
+  background: #353535;
 }
 
 .spacer{

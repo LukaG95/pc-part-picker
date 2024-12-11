@@ -39,8 +39,8 @@ function SearchPhone({ z_counter }) {
       </div>
 
       <div className={styles["dropdown-menu"]} style={{ zIndex: z_counter + 2 }}>
-
         <input className={styles.search} placeholder="išči izdelke..." type="text"/>
+        <div className={styles["x-button"]} onClick={()=> setIsOpen(false)}></div>
       </div>
 
     </div>
