@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
 
-  background: #1C1C1C; //#2F2F2F
+  background: #1C1C1C;
 
   width: 33px;
   height: 33px;
@@ -29,10 +29,6 @@
 
   &:hover{
     cursor: pointer;
-    //background: #353535;
-  }
-  &:active{
-    //background: #3a3a3a;
   }
 }
 

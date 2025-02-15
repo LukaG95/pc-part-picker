@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import styles from './Basket.module.scss';
 import useWindowDimensions from '../misc/WindowDimensions.js';
 import { SelectionContext  } from "../context/SelectionContext.js";
 
-function Basket(props) {
+function Basket() {
   const { s_width } = useWindowDimensions();
   const { userSelections, updateSelection } = useContext(SelectionContext);
   const object_keys = Object.keys(userSelections);
@@ -32,7 +32,6 @@ function Basket(props) {
   }
 
   function displayCustomBuild(){
-    
     let build_exists = false;
     object_keys.forEach(key => { 
       if (userSelections[key].products.length > 0) { 
@@ -52,19 +51,17 @@ function Basket(props) {
               const component = userSelections[key];
               if (component.products.length > 0)
               return (
-                  component.products.map(product => 
-                    <div className={styles["basket-item-name-wrapper"]}>
-                    <div className={styles.dot}></div>
-                    <div className={styles["product-name"]}>{product.name}</div>
-                  </div>
-                  )
-            
+                component.products.map(product => 
+                  <div className={styles["basket-item-name-wrapper"]}>
+                  <div className={styles.dot}></div>
+                  <div className={styles["product-name"]}>{product.name}</div>
+                </div>
+                )
               )
             })
           }
         </div>
       )
-    
   }
 }
 

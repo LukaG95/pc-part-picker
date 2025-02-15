@@ -37,7 +37,6 @@ function SelectionProvider({ children }) {
     });
   };
   
-
   return (
     <SelectionContext.Provider value={{ userSelections, updateSelection }}>
       {children}

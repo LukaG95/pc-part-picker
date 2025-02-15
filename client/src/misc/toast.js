@@ -17,7 +17,6 @@ function createNotification(type, message, redirect) {
       else return null
     }
   });
-
 }
 
 export { createNotification, ToastContainer, toast };

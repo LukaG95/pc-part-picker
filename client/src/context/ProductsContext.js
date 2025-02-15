@@ -111,10 +111,6 @@ function ProductsContextProvider({ children }) {
       {children}
     </ProductsContext.Provider>
   );
-
-
 }
-
-
 
 export { ProductsContextProvider, ProductsContext };

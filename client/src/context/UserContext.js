@@ -9,7 +9,6 @@ const [loggedIn, setLoggedIn] = useState(null);
 
   useEffect(() => {
     getUserInfo()
-
   }, []);
 
   return (
@@ -38,9 +37,6 @@ const [loggedIn, setLoggedIn] = useState(null);
       }
     });
   }
-
 }
-
-
 
 export { UserContextProvider, UserContext };

@@ -14,14 +14,6 @@ const userSchema = new mongoose.Schema({
     unique: true
   },
 
-  /* email: {
-    type: String,
-    maxlength: 255,
-    sparse: true,
-    unique: true,
-    required: true
-  }, */
-
   activatedAccount: {
       type: Boolean,
       default: false,

@@ -13,12 +13,9 @@
     padding: 11px 14px;
     height: 45px;
   }
-
-
 }
 
 .basket-items-wrapper{
-
   padding: 20px;
   
   .basket-item{
@@ -26,7 +23,6 @@
     border: 1px solid #373737;
 
     padding: 15px;
-
     border-radius: 5px;
 
     .title-price-wrapper{
@@ -67,20 +63,18 @@
       }
     }
   }
-  
 }
 
 .floating-register-wrapper{
   position: absolute;
-
-  background: #252525;
-  
   left: 25px;
   right: 25px;
   bottom: 25px;
 
-  border-radius: 5px;
+  background: #252525;
   padding: 18px;
+
+  border-radius: 5px;
 
   .total-amount-wrapper{
     display: flex;
@@ -98,7 +92,6 @@
       color: #C1C1C1;
       font-size: 14px;
       font-weight: 600;
-      
     }
   }
 
@@ -160,10 +153,10 @@
   height: 67px;
   min-width: 67px;
 
+  margin-right: 7px;
+
   border: 1px solid #404040;
   border-radius: 5px;
-
-  margin-right: 7px;
 
   box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.35);
   pointer-events: auto;
@@ -195,7 +188,6 @@
   &:active{
     background: #2e2e2e;
   }
-
 }
 
 .basket-button{
@@ -218,6 +210,7 @@
 
   border: 1px solid #404040;
   border-radius: 5px;
+
   pointer-events: auto;
 
   box-shadow: 
@@ -271,8 +264,4 @@
 
   visibility: visible;
   transform: translateY(0);
-
 }
-
-
-

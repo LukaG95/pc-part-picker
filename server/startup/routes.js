@@ -5,8 +5,6 @@ const cors = require('cors');
 const AuthRouter = require('../Routes/authRoutes');
 
 module.exports = function (app) {
-  /*   app.set('trust proxy', 1); */
-
   const allowedOrigins = process.env.NODE_ENV === 'production' ? 
   ['<website domain>'] : 
   ['http://localhost:3000'];

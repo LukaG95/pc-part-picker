@@ -1,5 +1,4 @@
 const stockData = [
-
   // cpu
   { id: 1, stock: 15, location: "Na zalogi", isNew: true, price: 629.99, regular_price: 629.99, discount: null },
   { id: 2, stock: 0, location: "Pri dobavitelju", isNew: true, price: 809.99, regular_price: 899.99, discount: 10 },
@@ -77,11 +76,6 @@ const stockData = [
   { id: 58, stock: 1, location: "Na zalogi", isNew: true, price: 9.99, regular_price: 9.99, dicount: null},
   { id: 59, stock: 1, location: "Na zalogi", isNew: true, price: 29.99, regular_price: 29.99, discount: null },
   { id: 60, stock: 1, location: "Na zalogi", isNew: true, price: 19.99, regular_price: 19.99, discount: null }
-
 ];
-
-
-
-
 
 export default stockData;

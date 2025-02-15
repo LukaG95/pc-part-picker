@@ -4,7 +4,6 @@ import SortByButton from './filter buttons/SortByButton';
 import CheckBoxButton from './filter buttons/CheckBoxButton';
 import Product from './Product.js';
 import useWindowDimensions from '../misc/WindowDimensions.js';
-
 import { ProductsContext } from "../context/ProductsContext.js";
 
 function Items({ z_counter, setZ_counter}) {
@@ -47,27 +46,41 @@ function Items({ z_counter, setZ_counter}) {
 
   return (
     <div className={styles["main-wrapper"]}>
-
-      <div className={`${styles["top-search-wrapper"]} ${styles["hide-on-mobile"]}`} style={{zIndex: z_counter+1}} value={searchText} onChange={e => setSearchText(e.target.value)}>
-        <input className={styles.search} placeholder="išči izdelke..." type="text"/>
-        <CheckBoxButton label={"Na zalogi"} />
+      <div
+        className={`${styles["top-search-wrapper"]} ${styles["hide-on-mobile"]}`}
+        style={{ zIndex: z_counter + 1 }}
+      >
+        <input
+          className={styles.search}
+          placeholder="Išči izdelke..."
+          type="text"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <CheckBoxButton label="Na zalogi" />
         <SortByButton />
       </div>
-    
-      <div ref={itemsRef} className={styles["items"]}>
 
-        <div className={`${styles["space2"]} ${styles["hide-on-mobile"]}`} >{selectedComponent.plural.toUpperCase()}<span>{products && products.length} artiklov</span></div>
+      <div ref={itemsRef} className={styles.items}>
+        <div className={`${styles.space2} ${styles["hide-on-mobile"]}`}>
+          {selectedComponent.plural.toUpperCase()}
+          <span>{products?.length} artiklov</span>
+        </div>
 
-        {
-          products && products.map(item => <Product key={item.id} product={item} z_counter={z_counter} setZ_counter={setZ_counter} />)
-        }
-
+        {products?.map((item) => (
+          <Product
+            key={item.id}
+            product={item}
+            z_counter={z_counter}
+            setZ_counter={setZ_counter}
+          />
+        ))}
       </div>
 
-      { showSpace && <div className={styles["space"]}></div> }
+      {/* Extra Space if Needed */}
+      {showSpace && <div className={styles.space}></div>}
     </div>
   );
-
 }
 
 export default Items;

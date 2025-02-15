@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import styles from './SearchPhone.module.scss';
 import { ProductsContext } from "../context/ProductsContext.js";
-import { SelectionContext  } from "../context/SelectionContext.js";
 import SearchImage from '../images/search.png';
 import useWindowDimensions from '../misc/WindowDimensions.js';
 
@@ -11,10 +10,6 @@ function SearchPhone({ z_counter }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const handleSelect = (option) => {
-
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -28,7 +23,6 @@ function SearchPhone({ z_counter }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
 
   if (s_width < 1151)
   return (
@@ -45,7 +39,6 @@ function SearchPhone({ z_counter }) {
 
     </div>
   );
-
 }
 
 export default SearchPhone;

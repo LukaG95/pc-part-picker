@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import styles from './BasketPhone.module.scss';
-import { ProductsContext } from "../context/ProductsContext.js";
 import { SelectionContext } from "../context/SelectionContext.js";
 import BasketImage from '../images/basket.png';
 import useWindowDimensions from '../misc/WindowDimensions.js';
@@ -54,7 +53,6 @@ function BasketPhone({ z_counter }) {
           <div className={styles["cash-register-button"]}>NA BLAGAJNO</div>
         </div>
       </div>
-      
     </div>
   );
 
@@ -65,7 +63,6 @@ function BasketPhone({ z_counter }) {
   }
 
   function displayCustomBuild(){
-    
     let build_exists = false;
     object_keys.forEach(key => { 
       if (userSelections[key].products.length > 0) { 
@@ -85,19 +82,17 @@ function BasketPhone({ z_counter }) {
               const component = userSelections[key];
               if (component.products.length > 0)
               return (
-                  component.products.map(product => 
-                    <div className={styles["basket-item-name-wrapper"]}>
-                    <div className={styles.dot}></div>
-                    <div className={styles["product-name"]}>{product.name}</div>
-                  </div>
-                  )
-            
+                component.products.map(product => 
+                  <div className={styles["basket-item-name-wrapper"]}>
+                  <div className={styles.dot}></div>
+                  <div className={styles["product-name"]}>{product.name}</div>
+                </div>
+                )
               )
             })
           }
         </div>
       )
-    
   }
 }
 

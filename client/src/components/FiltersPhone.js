@@ -10,9 +10,10 @@ import CheckBoxButton from './filter buttons/CheckBoxButton';
 function FiltersPhone({ z_counter }) {
   const { s_width } = useWindowDimensions();
   const { userSelections } = useContext(SelectionContext);
-  const { selectedComponent, setSelectedComponent } = useContext(ProductsContext);
+  const { selectedComponent } = useContext(ProductsContext);
 
   let filters = [];
+
   Object.keys(userSelections).map(i => {
     const component = userSelections[i];
     if (component.type === selectedComponent.type)
@@ -39,11 +40,9 @@ function FiltersPhone({ z_counter }) {
   if (s_width < 1151)
   return (
     <div className={`${styles["dropdown-wrapper"]} ${isOpen ? styles.open : ""}`} ref={dropdownRef}> 
-
       <div className={styles["filter-button"]} onClick={() => setIsOpen(prev => !prev)} >
         <img src={FilterImage}/>
       </div>
-
       <div className={styles["dropdown-menu"]} style={{ zIndex: z_counter + 3 }}>
         <div className={styles.title}>
           FILTRI
@@ -57,10 +56,8 @@ function FiltersPhone({ z_counter }) {
         <div className={styles.spacer2}></div>
         <CheckBoxButton label={"Na zalogi"} brandFilter={false} showFilters={true} type={"mobile-component-filter"}/>
       </div>
-
     </div>
   );
-
 }
 
 export default FiltersPhone;

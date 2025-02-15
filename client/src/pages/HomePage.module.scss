@@ -2,16 +2,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
+
   height: 100%;
   overflow-x: hidden;
-
 }
 
 .main-wrapper{
   position: relative;
+  
   display: flex;
   flex-grow: 1;
-  overflow: auto;
+
   gap: 1px;
   margin-top: 1px;
 

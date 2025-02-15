@@ -27,18 +27,12 @@ exports.signup = async (req, res, next) => {
   const { error } = validateSignup({ username, password, passwordConfirm });
   if (error) return res.status(400).json({ info: 'invalid credentials', message: error.details[0].message });
 
-/*   let result = await user.validateEmail(email);
-  if (!result) return res.status(400).json({ info: 'email', message: 'this email is taken' }); */
-
   result = await validateUsername(username);
   if (result) return res.status(400).json({ info: 'username', message: 'this username is taken' });
 
   const newUser = await User.create({
       username, password, passwordConfirm
   });
-
-
-  /* await sendEmail('signup', newUser); */
 
   return createSendToken(newUser, res);
 };
@@ -101,11 +95,6 @@ const createSendToken = (user, res, options) => {
   if (process.env.NODE_ENV === "production") cookieSettings.secure = true
   
   res.cookie('jwt', token, cookieSettings);
-
-/*   if (options && options.redirect === 'true') {
-      return res.redirect('/');
-  } */
-
   return res.status(200).json({ success: true, message: 'successfully added jwt cookie' });
 };
 

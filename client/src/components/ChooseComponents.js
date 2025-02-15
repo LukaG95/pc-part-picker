@@ -11,9 +11,7 @@ function ChooseComponents({ selectedComponent, setSelectedComponent }) {
 
   return (
     <div className={styles["main-wrapper"]}>
-     
         <div className={styles.title}>IZBERI KOMPONENTE</div>
-
         <div className={styles.components}>
           {
             Object.keys(userSelections).map(i => {
@@ -38,7 +36,6 @@ function ChooseComponents({ selectedComponent, setSelectedComponent }) {
             })
           }
         </div>
-
     </div>
   );
 }

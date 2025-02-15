@@ -3,7 +3,6 @@ import styles from './SortByButton.module.scss';
 import { ProductsContext } from "../../context/ProductsContext.js";
 
 function SortByButton({ mobile }) {
-
   const { setSortBy } = useContext(ProductsContext);
 
   const options = [
@@ -19,7 +18,6 @@ function SortByButton({ mobile }) {
   const handleSelect = (option) => {
     setSelectedOption(option.label);
     setSortBy(option.value);
-    //props.onSelect(option.value);
   };
 
   useEffect(() => {
@@ -52,7 +50,6 @@ function SortByButton({ mobile }) {
             </div>
           ))}
         </div>
-
     </div>
   );
 }

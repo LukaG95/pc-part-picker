@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useRef, useContext } from 'react';
 import styles from './Product.module.scss';
 import { sleep } from '../misc/sleep.js';
 import useWindowDimensions from '../misc/WindowDimensions.js';
@@ -7,7 +7,7 @@ import { SelectionContext  } from "../context/SelectionContext.js";
 let leaveTimeout;
 
 function Product({ product, z_counter, setZ_counter }) {
-  const { s_width, s_height } = useWindowDimensions();
+  const { s_width } = useWindowDimensions();
   const { userSelections, updateSelection } = useContext(SelectionContext);
 
   const productRef = useRef(null);
@@ -31,7 +31,7 @@ function Product({ product, z_counter, setZ_counter }) {
     }, 150)
   };
 
-   const handleProductClick = async () => {
+  const handleProductClick = async () => {
     const product = productRef.current;
     const productRect = product.getBoundingClientRect(); // Get product's position and dimensions
 
@@ -70,7 +70,6 @@ function Product({ product, z_counter, setZ_counter }) {
     });
   };
   
-
   return (
     <div 
       className={styles["product_wrapper"]}
@@ -100,26 +99,51 @@ function Product({ product, z_counter, setZ_counter }) {
           </div>
         </div>
 
-        { s_width <= 1150 ?
-          isThisProductSelected() ? 
-            <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button-mobile"]} ${styles["remove-button-mobile"]}`}>ODSTRANI</div>  
-              :
-              <div onClick={(e) => { updateSelection(product); handleProductClick(e) }} className={styles["choose-button-mobile"]}>IZBERI</div>
-            : null
-        }
-
-
+        { s_width <= 1150 && (
+          isThisProductSelected() ? (
+            <div
+              ref={chooseButtonRef}
+              onClick={() => updateSelection(product, true)}
+              className={`${styles["choose-button-mobile"]} ${styles["remove-button-mobile"]}`}
+            >
+              ODSTRANI
+            </div>
+          ) : (
+            <div
+              onClick={(e) => {
+                updateSelection(product);
+                handleProductClick(e);
+              }}
+              className={styles["choose-button-mobile"]}
+            >
+              IZBERI
+            </div>
+          )
+        )}
       </div>
-     
-        { s_width > 1150 ?
-          isThisProductSelected() ? 
-            <div ref={chooseButtonRef} onClick={() => updateSelection(product, true)} className={`${styles["choose-button"]} ${styles["remove-button"]}`}>Odstrani</div>  
-              :
-            <div ref={chooseButtonRef} onClick={(e) => { updateSelection(product); handleProductClick(e) }} className={styles["choose-button"]}>Izberi</div>
-            : null
-        }
-      
 
+      { s_width > 1150 && (
+        isThisProductSelected() ? (
+          <div
+            ref={chooseButtonRef}
+            onClick={() => updateSelection(product, true)}
+            className={`${styles["choose-button"]} ${styles["remove-button"]}`}
+          >
+            Odstrani
+          </div>
+        ) : (
+          <div
+            ref={chooseButtonRef}
+            onClick={(e) => {
+              updateSelection(product);
+              handleProductClick(e);
+            }}
+            className={styles["choose-button"]}
+          >
+            Izberi
+          </div>
+        )
+      )}
     </div>  
   );
 
@@ -132,7 +156,6 @@ function Product({ product, z_counter, setZ_counter }) {
     
     return selected;
   }
-
 }
 
 const stockStyle = (item) => {

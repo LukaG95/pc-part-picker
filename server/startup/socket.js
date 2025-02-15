@@ -24,9 +24,7 @@ module.exports = function (app, port) {
         return socket.disconnect();
       }
 
-      //socket.shouldDisconnect = false;
       socket.join(decoded.id+process.env.ROOM_SECRET);
-      //socket.token = decoded.id;
       socket.emit('auth', 'success'); 
 
     } catch(e) {

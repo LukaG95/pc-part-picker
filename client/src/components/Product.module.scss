@@ -75,11 +75,6 @@
 .selected {
   background: #17342A !important;  
   border: 1px solid rgb(34, 70, 34);
-  
-  .img-wrapper{
-   // padding-top: 39px;
-
-  }
 
   img{
     filter: blur(3px);
@@ -101,7 +96,6 @@
     border-bottom: 1px solid rgb(53, 53, 53);
     border-left: 1px solid rgb(53, 53, 53);
   }
-  
 }
 
 .location{
@@ -119,14 +113,12 @@
 
   font-size: 12px;
 
-
   border-radius: 5px;
   padding: 5px 10px;
 
   left: 14px;
   top: 40px;
   z-index: 2;
-
 }
 
 .used{
@@ -235,7 +227,6 @@
     transition: background 0s ease;
     background: #1b667c;
   }
-
 }
 
 .remove-button{

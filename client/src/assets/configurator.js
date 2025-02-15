@@ -78,6 +78,5 @@ export const components = {
       
     ],
     products: []
-  },
-  
+  }
 }; 

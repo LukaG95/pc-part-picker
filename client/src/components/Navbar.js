@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import React from 'react';
 import styles from './Navbar.module.scss';
 import PhoneImage from '../images/phone.png';
 import DiscordImage from '../images/discord.png';
@@ -11,7 +10,6 @@ import FiltersPhone from './FiltersPhone';
 import SearchPhone from './SearchPhone';
 
 const Navbar = ({ openSidebar, setOpenSidebar, z_counter }) => {
-
   const toggleMenu = () => setOpenSidebar(!openSidebar);
 
   return (
